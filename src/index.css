@@ -14,3 +14,12 @@ input:-webkit-autofill {
   -webkit-text-fill-color: black !important; /* Ensures text color is black */
   transition: background-color 5000s ease-in-out 0s; /* Prevents flashing effect */
 }
+.active-nav{
+  background-color: inherit !important;
+  color:#bf9444 !important;
+  border-color: #bf9444 !important;
+}
+.menu li > *:not(ul, .menu-title, details, .btn):active{
+  background-color: inherit !important;
+  color:#bf9444 !important;
+}

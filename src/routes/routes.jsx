@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import NotFound from "../layouts/NotFound";
+import NotFound from "../pages/NotFound";
 import Home from "../pages/PublicPages/Home/Home";
 import Gallery from "../pages/PublicPages/Gallery/Gallery";
 import SingleFoodPage from "../pages/PublicPages/SingleFoodPage/SingleFoodPage";

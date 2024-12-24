@@ -8,10 +8,10 @@ import ThemeProvider from "./Providers/ThemeProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <ThemeProvider>
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <RouterProvider router={router}>
+        <AuthProvider />
+      </RouterProvider>
+    </ThemeProvider>
   </StrictMode>
 );
