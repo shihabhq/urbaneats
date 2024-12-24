@@ -21,4 +21,24 @@ export default {
     },
   },
   plugins: [daisyui],
+  daisyui: {
+    themes: [
+      {
+        light: {
+          primary: "#FF5722",
+          secondary: "#FF9800",
+          accent: "#8BC34A",
+          neutral: "#5D4037",
+          "base-100": "#FAF9F6",
+        },
+        night: {
+          primary: "#FF6F61",
+          secondary: "#F9A825",
+          accent: "#4CAF50",
+          neutral: "#2C2C2C",
+          "base-100": "#1B1B1B",
+        },
+      },
+    ],
+  },
 };
