@@ -1,9 +1,10 @@
-import React from 'react'
+
+import Heading from '../shared/Heading'
 
 const NotFound = () => {
   return (
-    <div>
-      
+    <div className='my-52'>
+      <Heading largeHead={'404 - No Data Found'} />
     </div>
   )
 }

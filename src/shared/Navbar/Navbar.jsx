@@ -11,7 +11,7 @@ const Navbar = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className="container mx-auto px-4 mobile:px-12 sticky left-0 bg-base-100 z-500 rounded-full w-full top-4 shadow-md">
+    <div className="container mx-auto px-4 mobile:px-12 fixed left-0 right-0 top-4 bg-base-100 z-50 rounded-full shadow-md">
       <div className="navbar bg-base-100">
         {/* Navbar Start */}
         <div className="navbar-start items-center">
@@ -44,7 +44,7 @@ const Navbar = () => {
                 <NavbarBtn name={"Gallery"} link="/gallery" />
               </li>
               <li className="py-2 sm:hidden">
-                <ButtonCovered name='Login' to='/login'  />
+                <ButtonCovered name="Login" to="/login" />
               </li>
             </ul>
           </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
         {/* Navbar End */}
         <div className="navbar-end gap-4">
           <div className="hidden sm:flex items-center">
-          <ButtonCovered name='Login' to='/login' />
+            <ButtonCovered name="Login" to="/login" />
           </div>
           <ThemeToggle />
         </div>

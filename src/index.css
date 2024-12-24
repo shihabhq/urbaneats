@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,12 +14,15 @@ input:-webkit-autofill {
   -webkit-text-fill-color: black !important; /* Ensures text color is black */
   transition: background-color 5000s ease-in-out 0s; /* Prevents flashing effect */
 }
-.active-nav{
+.active-nav {
   background-color: inherit !important;
-  color:#bf9444 !important;
+  color: #bf9444 !important;
   border-color: #bf9444 !important;
 }
-.menu li > *:not(ul, .menu-title, details, .btn):active{
+.menu li > *:not(ul, .menu-title, details, .btn):active {
   background-color: inherit !important;
-  color:#bf9444 !important;
+  color: #bf9444 !important;
+}
+.home-banner {
+  background-image: url('/assets/homebg.jpg');
 }
