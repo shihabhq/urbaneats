@@ -20,7 +20,7 @@ const ChefCard = ({ name, title, src }) => {
 
 const Chefs = () => {
   return (
-    <div className="my-40">
+    <div className="my-52">
       <Heading
         smallHead={"Check Out Our MasterChefs"}
         largeHead={"Our Chefs"}

@@ -10,7 +10,7 @@ import { FaF } from "react-icons/fa6";
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <footer className="mt-52 relative bg-base-200 text-base-content">
+    <footer className=" relative bg-base-200 text-base-content">
       {/* Curved top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
         <svg

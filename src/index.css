@@ -26,3 +26,6 @@ input:-webkit-autofill {
 .home-banner {
   background-image: url('/assets/homebg.jpg');
 }
+html{
+  scroll-behavior: smooth;
+}

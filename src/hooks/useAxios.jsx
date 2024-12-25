@@ -1,8 +1,10 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../contexts/AuthContext";
 
 const useAxios = () => {
+  const { logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const axiosInstance = axios.create({
     baseURL: "http://localhost:5000",
@@ -15,7 +17,10 @@ const useAxios = () => {
       },
       (error) => {
         if (error.status === 401 || error.status === 403) {
-          //TODO: logout user:
+          logOut()
+            .then(() => console.log("logged out user as you are unauthorized"))
+            .catch((e) => console.log(e));
+
           navigate("/login");
         }
         return Promise.reject(error);
@@ -23,7 +28,7 @@ const useAxios = () => {
     );
   }, []);
 
-  return axiosInstance;
+  return axiosInstance ;
 };
 
 export default useAxios;

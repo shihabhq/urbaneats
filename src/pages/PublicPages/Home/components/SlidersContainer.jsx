@@ -16,7 +16,6 @@ import ButtonCovered from "../../../../shared/ButtonCovered";
 const SlidersContainer = () => {
   return (
     <div className="home-banner relative  min-h-screen flex flex-col lg:flex-row justify-center items-center pt-16 gap-6 bg-cover bg-center">
-    
       <div
         className="absolute inset-0 bg-cover bg-center -z-10"
         style={{
@@ -25,7 +24,6 @@ const SlidersContainer = () => {
         <div className="absolute inset-0 bg-black bg-opacity-80"></div>
       </div>
 
-     
       <div className="basis-2/5 flex my-16 flex-col items-start pl-16 pt-8 gap-4">
         <p className="text-xl text-btncol font-semibold">
           Welcome to UrbanEats!
@@ -33,16 +31,17 @@ const SlidersContainer = () => {
         <h1 className="text-4xl sm:text-6xl w-[80%] font-poppins text-white font-bold">
           Taste & Bake the Best Food You Need!
         </h1>
-        <ButtonCovered name="Learn More" to="/all-foods" />
+        <p className="text-white text-lg max-w-lg">
+          The UrbanEats is a restaurant management website where you can buy and
+          sell foods that you love.
+        </p>
+        <ButtonCovered name="See All Foods" to="/all-foods" />
       </div>
 
-
       <div className="grid grid-cols-1 sm:grid-cols-2 basis-1/2">
-       
         <div className="h-[60vh] cursor-grab active:cursor-grabbing">
           <Swiper
             slidesPerView={1}
-       
             loop={true}
             autoplay={{
               delay: 1000,
@@ -73,7 +72,6 @@ const SlidersContainer = () => {
                 className="w-full h-full object-cover"
               />
             </SwiperSlide>
-           
           </Swiper>
         </div>
 
@@ -109,6 +107,6 @@ const SlidersContainer = () => {
       </div>
     </div>
   );
-}
+};
 
-export default SlidersContainer
+export default SlidersContainer;

@@ -1,12 +1,18 @@
-
-import Heading from '../shared/Heading'
+import Footer from "../shared/footer/Footer";
+import Heading from "../shared/Heading";
+import Navbar from "../shared/Navbar/Navbar";
 
 const NotFound = () => {
   return (
-    <div className='my-52'>
-      <Heading largeHead={'404 - No Data Found'} />
-    </div>
-  )
-}
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
 
-export default NotFound
+      <div className="my-52">
+        <Heading largeHead={"404 - No Data Found"} />
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default NotFound;
