@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../../../contexts/AuthContext";
 import useSingleData from "../../../hooks/useSingleData";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   FaCalendar,
   FaDollarSign,
@@ -22,6 +22,7 @@ const FoodPurchase = () => {
   const [quantity, setQuantity] = useState(1);
   const [date, setDate] = useState(new Date());
   const axiosInstance = useAxios();
+  const navigate = useNavigate();
   const { id } = useParams();
   const { data: foodItem, isError, isLoading } = useSingleData(id);
 
@@ -48,19 +49,21 @@ const FoodPurchase = () => {
     try {
       const foodInfo = {
         name: foodItem.name,
-        quantity: quantity,
+        image: foodItem.image,
+        quantity: Number(quantity),
         price: foodItem.price,
         buyerEmail: user.email,
         purchaseTime: date,
       };
-      const response = axiosInstance.post(`/purchase/${id}`, foodInfo);
-      if (!response.ok) {
+      const response = await axiosInstance.post(`/purchase/${id}`, foodInfo);
+      if (response.status !== 200) {
         toast.error("Cannot Purchase this");
         return;
       }
       toast.success("purchase Added successfully");
+      navigate("/my-foods");
     } catch (error) {
-      toast.error("Cannot Purchase this");
+      toast.error("Cannot Purchase this1");
       return;
     }
   };
