@@ -13,10 +13,12 @@ const useAxios = () => {
   useEffect(() => {
     axiosInstance.interceptors.response.use(
       (response) => {
+        
         return response;
       },
       (error) => {
         if (error.status === 401 || error.status === 403) {
+         
           logOut()
             .then(() => console.log("logged out user as you are unauthorized"))
             .catch((e) => console.log(e));
@@ -28,7 +30,7 @@ const useAxios = () => {
     );
   }, []);
 
-  return { axiosInstance };
+  return axiosInstance ;
 };
 
 export default useAxios;

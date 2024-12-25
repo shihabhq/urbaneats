@@ -56,7 +56,7 @@ const AuthProvider = ({ children }) => {
       //     .post("http://localhost:5000/logout", {}, { withCredentials: true })
       //     .then((res) => console.log("logout", res.data));
       // }
-      console.log("state captured", currentUser);
+      
       setLoading(false);
     });
 
