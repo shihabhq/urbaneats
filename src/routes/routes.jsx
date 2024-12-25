@@ -12,6 +12,7 @@ import MyOrders from "../pages/PrivatePages/MyOrders/MyOrders";
 import AddFoods from "../pages/PrivatePages/AddFood/AddFoods";
 import Login from "../pages/AuthPages/Login";
 import Register from "../pages/AuthPages/Register";
+import axios from "axios";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,9 @@ const router = createBrowserRouter([
         element: <SingleFoodPage />,
       },
       {
-        path: "/foods",
+        path: "/all-foods",
         element: <AllFoods />,
+        loader: () => fetch("http://localhost:5000/foods"),
       },
       {
         path: "/my-foods",

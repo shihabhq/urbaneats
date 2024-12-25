@@ -54,7 +54,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-cover justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex flex-col relative bg-cover justify-center py-12 sm:px-6 lg:px-8">
       <div
         className="absolute inset-0 bg-cover bg-center -z-10"
         style={{
