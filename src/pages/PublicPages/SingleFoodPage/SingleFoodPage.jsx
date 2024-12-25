@@ -5,33 +5,19 @@ import { Link, useParams } from "react-router-dom";
 import Loading from "../../../shared/Loading";
 import useAxios from "../../../hooks/useAxios";
 import NotFound from "../../NotFound";
+import useSingleData from "../../../hooks/useSingleData";
 
 const SingleFoodPage = () => {
-  const axiosInstance = useAxios();
   const { id } = useParams();
 
-  const FetchSingleFood = async () => {
-    const response = await axiosInstance.get(`/food/${id}`);
-    return response.data;
-  };
-  const {
-    data: foodItem,
-    error,
-    isError,
-    isLoading,
-  } = useQuery({
-    queryKey: ["Allfoods"],
-    queryFn: FetchSingleFood,
-  });
-  console.log(foodItem);
+  const { data: foodItem, isError, isLoading } = useSingleData(id);
+
 
   if (isLoading) {
     return <Loading />;
   }
-  if (isError) {
-    return <span>Error: {error.message}</span>;
-  }
-  if (!foodItem) {
+
+  if (!foodItem || isError) {
     return <NotFound />;
   }
 
@@ -92,7 +78,7 @@ const SingleFoodPage = () => {
             </div>
 
             <Link
-              to={"/food-purchase"}
+              to={`/food-purchase/${id}`}
               className="w-full px-6 py-3  bg-btncol text-btncol border border-btncol bg-inherit text-lg font-semibold rounded-lg hover:bg-btncol hover:text-white focus:outline-none focus:ring-2 focus:ring-btncol focus:ring-opacity-50 transition duration-300 ease-in-out flex items-center justify-center">
               <FaShoppingCart className="mr-2" />
               Purchase Now
