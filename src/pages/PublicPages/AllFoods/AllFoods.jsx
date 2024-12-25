@@ -3,36 +3,13 @@ import axios from "axios";
 
 import ButtonCovered from "../../../shared/ButtonCovered";
 import AllFoodsCard from "./components/AllFoodsCard";
-import useAxios from "../../../hooks/useAxios";
-import { useQuery } from "@tanstack/react-query";
 import Loading from "../../../shared/Loading";
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const AllFoods = () => {
-  // const { axiosInstance } = useAxios();
-
-  // const FetchFoods = async () => {
-  //   const response = await axiosInstance.get("/foods");
-  //   return response;
-  // };
-  // const { data, error,isError, isLoading } = useQuery({
-  //   queryKey: ["Allfoods"],
-  //   queryFn: FetchFoods,
-  // });
-
-  // if (isLoading) {
-  //   return <Loading />
-  // }
-  // if (isError) {
-  //   return <span>Error: {error.message}</span>
-  // }
-  // useEffect(() => {
-  //   axios
-  //     .get("http://localhost:5000/foods")
-  //     .then((res) => console.log(res.data));
-  // }, []);
+  
 
   const data = useLoaderData();
 
