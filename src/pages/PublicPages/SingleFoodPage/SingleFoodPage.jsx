@@ -10,8 +10,7 @@ import useSingleData from "../../../hooks/useSingleData";
 const SingleFoodPage = () => {
   const { id } = useParams();
 
-  const { data: foodItem, isError, isLoading } = useSingleData(id);
-
+  const { data: foodItem, isError, isLoading } = useSingleData(`/food/${id}`);
 
   if (isLoading) {
     return <Loading />;

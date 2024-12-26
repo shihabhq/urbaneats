@@ -13,7 +13,7 @@ import {
 import { FaBagShopping } from "react-icons/fa6";
 import Loading from "../../../shared/Loading";
 import NotFound from "../../NotFound";
-import Input from "../../../shared/Input";
+
 import { toast } from "react-toastify";
 import useAxios from "../../../hooks/useAxios";
 
@@ -24,7 +24,7 @@ const FoodPurchase = () => {
   const axiosInstance = useAxios();
   const navigate = useNavigate();
   const { id } = useParams();
-  const { data: foodItem, isError, isLoading } = useSingleData(id);
+  const { data: foodItem, isError, isLoading } = useSingleData(`/food/${id}`);
 
   useEffect(() => {
     const timeInterval = setInterval(() => {
@@ -61,7 +61,7 @@ const FoodPurchase = () => {
         return;
       }
       toast.success("purchase Added successfully");
-      navigate("/my-foods");
+      navigate("/my-orders");
     } catch (error) {
       toast.error("Cannot Purchase this1");
       return;

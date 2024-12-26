@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from "react";
+import useSingleData from "../../../hooks/useSingleData";
+import useAxios from "../../../hooks/useAxios";
+import AuthProvider from "../../../Providers/AuthProvider";
+import { useQuery } from "@tanstack/react-query";
 
 const MyFoods = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+ 
+};
 
-export default MyFoods
+export default MyFoods;
