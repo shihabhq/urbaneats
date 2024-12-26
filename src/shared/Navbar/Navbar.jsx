@@ -17,7 +17,7 @@ const Navbar = () => {
   const [firstChar, setFirstChar] = useState(
     user?.email.charAt(0).toUpperCase() || ""
   );
-  // console.log(object)
+
 
   useEffect(() => {
     if (user) {

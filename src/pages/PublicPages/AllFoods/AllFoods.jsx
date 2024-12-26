@@ -36,7 +36,7 @@ const AllFoods = () => {
       });
       setCurrentData(response.data);
     } catch (e) {
-      console.log(e);
+     
       toast.error("unable to get data");
     } finally {
       setLoading(false);

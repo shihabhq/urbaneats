@@ -24,8 +24,16 @@ input:-webkit-autofill {
   color: #bf9444 !important;
 }
 .home-banner {
-  background-image: url('/assets/homebg.jpg');
+  background-image: url("/assets/homebg.jpg");
 }
-html{
+html {
   scroll-behavior: smooth;
+}
+
+.hid{
+  display: none;
+}
+
+.gallery-card:hover .hid{
+  display: block;
 }

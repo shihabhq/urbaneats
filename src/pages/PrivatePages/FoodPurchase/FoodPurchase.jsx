@@ -46,6 +46,8 @@ const FoodPurchase = () => {
       return;
     }
 
+  
+
     try {
       const foodInfo = {
         name: foodItem.name,
@@ -53,6 +55,7 @@ const FoodPurchase = () => {
         quantity: Number(quantity),
         price: foodItem.price,
         buyerEmail: user.email,
+        owner: foodItem?.addedBy?.name,
         purchaseTime: date,
       };
       const response = await axiosInstance.post(`/purchase/${id}`, foodInfo);
