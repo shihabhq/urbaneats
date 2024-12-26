@@ -5,8 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 import Input from "../../shared/Input";
 import { toast } from "react-toastify";
 import AuthContext from "../../contexts/AuthContext";
+import Heading from "../../shared/Heading";
 
 const Register = () => {
+  const {user} = useContext(AuthContext)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -90,6 +92,13 @@ const Register = () => {
         setError("");
       });
   };
+  if (user) {
+    return (
+      <div className="my-52">
+        <Heading largeHead={"You are already Registered"} />;
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-cover justify-center py-12 sm:px-6 lg:px-8">

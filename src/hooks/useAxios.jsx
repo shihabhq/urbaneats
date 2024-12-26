@@ -2,6 +2,7 @@ import axios from "axios";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const useAxios = () => {
   const { logOut } = useContext(AuthContext);
@@ -13,15 +14,13 @@ const useAxios = () => {
   useEffect(() => {
     axiosInstance.interceptors.response.use(
       (response) => {
-        
         return response;
       },
       (error) => {
         if (error.status === 401 || error.status === 403) {
-         
           logOut()
-            .then(() => console.log("logged out user as you are unauthorized"))
-            .catch((e) => console.log(e));
+            .then(() => toast.error("logged out user as you are unauthorized"))
+            .catch((e) => toast.error("something went wrong"));
 
           navigate("/login");
         }
@@ -30,7 +29,7 @@ const useAxios = () => {
     );
   }, []);
 
-  return axiosInstance ;
+  return axiosInstance;
 };
 
 export default useAxios;

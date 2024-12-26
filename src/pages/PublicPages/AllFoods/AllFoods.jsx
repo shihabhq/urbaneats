@@ -56,13 +56,13 @@ const AllFoods = () => {
         }
         title={"All Foods"}
       />
-      <div className=" w-[80%] max-w-3xl mx-auto flex items-center mt-24  justify-center gap-0">
+      <div className=" w-[80%] max-w-3xl mx-auto flex-col mobile:flex-row flex items-center mt-24  justify-center gap-0">
         <input
           name={"search"}
           placeholder={"Search Foods"}
           type={"text"}
           required
-          className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-l-md shadow-sm placeholder-gray-400 border-r-0 bg-inherit text-base-content focus:outline-none focus:ring-btncol focus:border-btncol sm:text-sm"
+          className="appearance-none block w-full px-3 py-3 border border-gray-300 rounded-l-md shadow-sm placeholder-gray-400 mobile:border-r-0 bg-inherit text-base-content focus:outline-none focus:ring-btncol focus:border-btncol sm:text-sm mb-4 mobile:mb-0"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />

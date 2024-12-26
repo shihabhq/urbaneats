@@ -113,7 +113,7 @@ const UpdateModal = ({ food, handleUpdate, setOpenModal }) => {
           <button
             onClick={handleSubmit}
             className="px-4 py-2 bg-inherit  border border-btncol w-full text-lg rounded hover:bg-btncol text-btncol hover:text-white transition-all">
-            Update
+            Update Food
           </button>
         </div>
       </div>

@@ -14,7 +14,7 @@ const MyFoodsCard = ({ item, onEdit }) => {
       </div>
       <div className="flex mt-4 space-x-2">
         <button onClick={onEdit} className="px-4 py-2 bg-btncol border border-btncol w-full text-white text-lg rounded hover:bg-inherit hover:text-btncol transition-all">
-          Edit
+          Update
         </button>
       </div>
     </div>

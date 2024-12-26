@@ -4,6 +4,8 @@ import axios from "axios";
 import useAxios from "../../../../hooks/useAxios";
 import { toast } from "react-toastify";
 import AllFoodsCard from "../../AllFoods/components/AllFoodsCard";
+import ButtonBordered from "../../../../shared/ButtonBordered";
+import ButtonCovered from "../../../../shared/ButtonCovered";
 
 const TopFoods = () => {
   const axiosInstance = useAxios();
@@ -55,6 +57,9 @@ const TopFoods = () => {
             />
           );
         })}
+      </div>
+      <div className="flex mt-12 items-center justify-center w-full">
+        <ButtonCovered name={"See All Foods"} to={'/all-foods'} />
       </div>
     </div>
   );

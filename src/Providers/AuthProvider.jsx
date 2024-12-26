@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AuthContext from "../contexts/AuthContext";
-import auth from '../firebase/firebaseConfig'
+import auth from "../firebase/firebaseConfig";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -44,19 +44,19 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
 
-      // if (currentUser?.email) {
-      //   const user = { email: currentUser.email };
-      //   axios
-      //     .post("http://localhost:5000/jwt-token", user, {
-      //       withCredentials: true,
-      //     })
-      //     .then((res) => console.log(res.data));
-      // } else {
-      //   axios
-      //     .post("http://localhost:5000/logout", {}, { withCredentials: true })
-      //     .then((res) => console.log("logout", res.data));
-      // }
-      
+      if (currentUser?.email) {
+        const user = { email: currentUser.email };
+        axios.post("http://localhost:5000/jwt-token", user, {
+          withCredentials: true,
+        });
+      } else {
+        axios.post(
+          "http://localhost:5000/logout",
+          {},
+          { withCredentials: true }
+        );
+      }
+
       setLoading(false);
     });
 
@@ -73,7 +73,7 @@ const AuthProvider = ({ children }) => {
     loginUser,
     loginWithGoogle,
     logOut,
-    updateUserProfile
+    updateUserProfile,
   };
 
   return (

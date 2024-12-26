@@ -28,7 +28,7 @@ const FoodPurchase = () => {
 
   useEffect(() => {
     const timeInterval = setInterval(() => {
-      //this one is rendering the whole component all the time
+    
       setDate(new Date());
     }, 1000);
 
@@ -66,7 +66,7 @@ const FoodPurchase = () => {
       toast.success("purchase Added successfully");
       navigate("/my-orders");
     } catch (error) {
-      toast.error("Cannot Purchase this1");
+      toast.error("Cannot Purchase this");
       return;
     }
   };

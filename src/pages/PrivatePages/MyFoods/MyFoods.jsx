@@ -68,7 +68,7 @@ const MyFoods = () => {
       <div className="my-40 flex flex-col items-center">
         <Heading largeHead={"You have not Added any foods yet"} />
         <div className="w-fit">
-          <ButtonCovered name={"Go to All Food Page"} to={"/add-food"} />
+          <ButtonCovered name={"Add a food"} to={"/add-food"} />
         </div>
       </div>
     );

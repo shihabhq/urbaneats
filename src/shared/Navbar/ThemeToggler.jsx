@@ -1,11 +1,13 @@
 import { useContext } from "react";
-import { MdDarkMode,MdLightMode } from "react-icons/md";
-import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+
 
 import ThemeContext from "../../contexts/ThemeContext";
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const isDarkMode = theme === "night";
 
   return (
     <label className="swap swap-rotate">
@@ -13,19 +15,14 @@ const ThemeToggle = () => {
       <input
         type="checkbox"
         className="theme-controller"
-        value={theme}
+        value={isDarkMode}
         onChange={toggleTheme}
       />
 
       {/* sun icon */}
-      <div className="swap-on h-10 w-10 fill-current">
-        <MdLightMode size={40} />
-      </div>
+      {isDarkMode ? <MdLightMode size={40} /> : <MdDarkMode size={40} />}
 
       {/* moon icon */}
-      <div className="swap-off h-10 w-10 fill-current">
-        <MdDarkMode size={40} />
-      </div>
     </label>
   );
 };

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import Input from "./AddInput";
 import ButtonCovered from "../../../shared/ButtonCovered";
 import useAxios from "../../../hooks/useAxios";
+import { useNavigate } from "react-router-dom";
 
 const AddFoods = () => {
   const { user } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const AddFoods = () => {
   const [price, setPrice] = useState("");
   const [origin, setOrigin] = useState("");
   const [quantity, setQuantity] = useState("1");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +38,7 @@ const AddFoods = () => {
     }
     if (Number(price) < 1) {
       toast.error("Price must be more than or equal to 1$");
-      return
+      return;
     }
 
     const food = {
@@ -48,7 +50,7 @@ const AddFoods = () => {
       origin: origin,
       description: description,
       addedBy: {
-        name: user.dispayName,
+        name: user.displayName,
         email: user.email,
       },
       purchaseCount: 0,
@@ -58,11 +60,11 @@ const AddFoods = () => {
       if (response.status !== 200) {
         toast.error("There was an error while adding food");
       }
-      toast.success("successfully added food");
+      toast.success("successfully added food and redirecting to my foods page");
+      navigate("/my-foods");
     } catch (error) {
       toast.error("There was an error while adding food");
-    } 
-    finally {
+    } finally {
       setCategory("");
       setFoodName("");
       setDescription("");

@@ -5,13 +5,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Input from "../../shared/Input";
 import { toast } from "react-toastify";
 import AuthContext from "../../contexts/AuthContext";
+import Heading from "../../shared/Heading";
 
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setLoading, setUser, loginUser, loginWithGoogle } =
-    useContext(AuthContext); 
+  const { setLoading, setUser, loginUser, loginWithGoogle, user } =
+    useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -52,6 +52,13 @@ const Login = () => {
         setLoading(false);
       });
   };
+  if (user) {
+    return (
+      <div className="my-52">
+        <Heading largeHead={"You are already logged in"} />;
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col relative bg-cover justify-center py-12 sm:px-6 lg:px-8">
