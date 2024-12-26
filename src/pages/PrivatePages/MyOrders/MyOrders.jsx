@@ -20,7 +20,7 @@ const MyOrders = () => {
     return response.data;
   };
   const { data, isError, isLoading } = useQuery({
-    queryKey: ["Myfoods"],
+    queryKey: ["MyOrders"],
     queryFn: fetchMyOrders,
     enabled: !!user?.email,
   });

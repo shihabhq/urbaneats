@@ -31,7 +31,7 @@ const AllFoodsCard = ({
           <div className="badge badge-outline">Purchased: {purchaseCount}</div>
           <div className="badge badge-outline">{origin}</div>
         </div>
-        {quantity && <p>Only {quantity} Quantity left!</p>}
+        {quantity>0 && <p>Only {quantity} Quantity left!</p>}
         <ButtonBordered title={"View Details"} to={`/food/${id}`} />
       </div>
     </div>

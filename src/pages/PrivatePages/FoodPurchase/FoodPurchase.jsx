@@ -181,8 +181,8 @@ const FoodPurchase = () => {
             </div>
 
             <div className="mt-6">
-              {foodItem?.quantity > 0 ||
-              user.email === foodItem?.addedBy?.email ? (
+              {foodItem?.quantity > 0 &&
+              user.email !== foodItem?.addedBy?.email ? (
                 <button
                   type="submit"
                   className="w-full flex justify-center py-2 px-4 border border-btncol rounded-md shadow-sm text-sm font-medium text-white hover:text-btncol transition-all bg-btncol hover:bg-inherit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-btncol">

@@ -61,7 +61,7 @@ const Footer = () => {
       </div>
 
       {/* Social links */}
-      <div className="flex justify-center space-x-4 gap-6 py-4 bg-base-200">
+      <div className="flex justify-center space-x-3  mobile:space-x-6  py-4 bg-base-200">
         <FooterSocial to={"https://www.facebook.com"}>
           <FaFacebook size={32}  />
         </FooterSocial>

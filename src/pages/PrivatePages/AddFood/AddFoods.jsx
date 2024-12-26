@@ -30,9 +30,13 @@ const AddFoods = () => {
       toast.error("Pleas Fillup all the fields");
       return;
     }
-    if (Number(quantity) < 1) {
-      toast.error("Quantity cannot be less than 1");
+    if (Number(quantity) < 1 || !Number.isInteger(Number(quantity))) {
+      toast.error("Quantity must be a valid integer more than 0");
       return;
+    }
+    if (Number(price) < 1) {
+      toast.error("Price must be more than or equal to 1$");
+      return
     }
 
     const food = {
@@ -50,14 +54,15 @@ const AddFoods = () => {
       purchaseCount: 0,
     };
     try {
-      const response = await axiosInstance.post("/add-foods", food);
+      const response = await axiosInstance.post("/add-food", food);
       if (response.status !== 200) {
         toast.error("There was an error while adding food");
       }
       toast.success("successfully added food");
     } catch (error) {
       toast.error("There was an error while adding food");
-    } finally {
+    } 
+    finally {
       setCategory("");
       setFoodName("");
       setDescription("");
