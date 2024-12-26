@@ -35,7 +35,7 @@ const router = createBrowserRouter([
       {
         path: "/all-foods",
         element: <AllFoods />,
-        loader: () => fetch("http://localhost:5000/foods"),
+        loader: () => fetch("https://urbaneats-server.vercel.app/foods"),
       },
       {
         path: "/my-foods",

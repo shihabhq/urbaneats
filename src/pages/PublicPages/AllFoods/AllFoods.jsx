@@ -9,8 +9,6 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const AllFoods = () => {
-  
-
   const data = useLoaderData();
 
   const [loading, setLoading] = useState(false);
@@ -31,12 +29,14 @@ const AllFoods = () => {
 
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/foods", {
-        params: { search: searchText },
-      });
+      const response = await axios.get(
+        "https://urbaneats-server.vercel.app/foods",
+        {
+          params: { search: searchText },
+        }
+      );
       setCurrentData(response.data);
     } catch (e) {
-     
       toast.error("unable to get data");
     } finally {
       setLoading(false);

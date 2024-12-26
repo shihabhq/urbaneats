@@ -8,7 +8,7 @@ const useAxios = () => {
   const { logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://urbaneats-server.vercel.app",
     withCredentials: true,
   });
   useEffect(() => {
