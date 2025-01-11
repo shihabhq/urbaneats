@@ -12,6 +12,7 @@ import MyFoodsCard from "./components/MyFoodsCard";
 import UpdateModal from "./components/UpdateModal";
 import { use } from "react";
 import { toast } from "react-toastify";
+import MyFoodsTable from "./components/MyFoodsTable";
 
 const MyFoods = () => {
   const axiosInstance = useAxios();
@@ -25,7 +26,7 @@ const MyFoods = () => {
     });
     return response.data;
   };
-  const { data, isError, error, isLoading } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: ["myFoods"],
     queryFn: fetchMyFoods,
   });
@@ -48,7 +49,7 @@ const MyFoods = () => {
       const updatedFoods = myFoods.map((food) =>
         food._id === updatedFood._id ? { ...food, ...updatedFood } : food
       );
-      toast.success('successfully updated data')
+      toast.success("successfully updated data");
       setMyFoods(updatedFoods);
       setOpenModal(false);
     } catch (error) {
@@ -76,7 +77,7 @@ const MyFoods = () => {
 
   return (
     <div className="my-44">
-      <Heading largeHead={"Your Added Products"} />
+      <Heading largeHead={"Your Added Foods"} />
       {openModal && (
         <UpdateModal
           food={foodToEdit}
@@ -84,16 +85,30 @@ const MyFoods = () => {
           setOpenModal={setOpenModal}
         />
       )}
-      <div className="container grid mx-auto w-[95%]  lg:w-[80%] gap-8 sm:grid-cols-2 lg:grid-cols-3 my-12">
-        {myFoods.map((item) => {
-          return (
-            <MyFoodsCard
-              key={item._id}
-              item={item}
-              onEdit={() => handleEdit(item)}
-            />
-          );
-        })}
+
+      <div className="container mx-auto w-[95%] overflow-x-auto  lg:w-[80%] gap-8  my-12">
+        <table className="w-full table-auto border-collapse">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myFoods.map((item) => {
+              return (
+                <MyFoodsTable
+                  key={item._id}
+                  food={item}
+                  onEdit={() => handleEdit(item)}
+                />
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   );

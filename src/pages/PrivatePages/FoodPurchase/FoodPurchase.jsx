@@ -53,7 +53,7 @@ const FoodPurchase = () => {
         name: foodItem.name,
         image: foodItem.image,
         quantity: Number(quantity),
-        price: foodItem.price,
+        price: Number(foodItem.price),
         buyerEmail: user.email,
         owner: foodItem?.addedBy?.name,
         purchaseTime: date,
@@ -107,7 +107,7 @@ const FoodPurchase = () => {
               <h3 className="text-xl font-medium text-base-content">
                 Price:{" "}
                 <span className="font-semibold">
-                  ${foodItem?.price.toFixed(2)}
+                  ${foodItem?.price}
                 </span>
               </h3>
             </div>

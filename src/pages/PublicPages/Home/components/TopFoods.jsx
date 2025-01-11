@@ -31,7 +31,7 @@ const TopFoods = () => {
         }
       />
 
-      <div className="container grid mx-auto w-[95%]  lg:w-[80%] gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="container grid mx-auto w-[95%]  lg:w-[80%] gap-8 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
         {topFoods.map((foods) => {
           const {
             category,
@@ -59,7 +59,7 @@ const TopFoods = () => {
         })}
       </div>
       <div className="flex mt-12 items-center justify-center w-full">
-        <ButtonCovered name={"See All Foods"} to={'/all-foods'} />
+        <ButtonCovered name={"See All Foods"} to={"/all-foods"} />
       </div>
     </div>
   );

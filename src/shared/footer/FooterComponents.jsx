@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 const FooterNav = ({ first, second, third, fourth }) => {
   return (
     <nav className="mx-4">
       <h6 className="footer-title">{first}</h6>
-      <a className="link link-hover">About us</a>
-      <a className="link link-hover">Contact</a>
-      <a className="link link-hover">Jobs</a>
-      <a className="link link-hover">Press kit</a>
+      <Link to={'/about'} className="link link-hover">About us</Link>
+      <Link to={'/home'} className="link link-hover">Home</Link>
+      <Link to={'/gallery'} className="link link-hover">Gallery</Link>
+      <Link to={'/all-foods'} className="link link-hover">All Foods</Link>
     </nav>
   );
 };

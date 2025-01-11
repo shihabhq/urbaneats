@@ -10,7 +10,7 @@ const AllFoodsCard = ({
   quantity,
   origin,
   description,
-  id
+  id,
 }) => {
   return (
     <div className="card bg-base-100 w-full shadow-xl">
@@ -27,12 +27,12 @@ const AllFoodsCard = ({
       <div className="card-body pt-4">
         <h2 className="card-title">{name}</h2>
         <p>{description.slice(0, 50)}...</p>
-        <div className="card-actions my-4 justify-end">
+        <div className="card-actions my-4 justify-end gap-1 flex">
           <div className="badge badge-outline">Purchased: {purchaseCount}</div>
           <div className="badge badge-outline">{origin}</div>
         </div>
-        {quantity>0 && <p>Only {quantity} Quantity left!</p>}
-        <ButtonBordered title={"View Details"} to={`/food/${id}`} />
+        {quantity > 0 && <p>Only {quantity} Quantity left!</p>}
+        <ButtonBordered title={"See More"} to={`/food/${id}`} />
       </div>
     </div>
   );

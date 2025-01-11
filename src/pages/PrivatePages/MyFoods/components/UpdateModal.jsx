@@ -7,7 +7,7 @@ const UpdateModal = ({ food, handleUpdate, setOpenModal }) => {
   const [category, setCategory] = useState(food?.category || "");
   const [image, setImage] = useState(food?.image || "");
   const [description, setDescription] = useState(food?.description || "");
-  const [price, setPrice] = useState(food?.price.toString() || "");
+  const [price, setPrice] = useState(food?.price || "");
   const [origin, setOrigin] = useState(food?.origin || "");
   const [quantity, setQuantity] = useState(food?.quantity.toString() || "1");
 
@@ -18,9 +18,9 @@ const UpdateModal = ({ food, handleUpdate, setOpenModal }) => {
       category,
       image,
       description,
-      price,
+      price:Number(price),
       origin,
-      quantity,
+      quantity:Number(quantity),
     };
     handleUpdate(updatedFood);
   };

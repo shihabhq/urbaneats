@@ -70,6 +70,9 @@ const Navbar = () => {
                 <NavbarBtn name={"Home"} link="/" />
               </li>
               <li className="py-2">
+                <NavbarBtn name={"About Us"} link="/about" />
+              </li>
+              <li className="py-2">
                 <NavbarBtn name={"All Foods"} link="/all-foods" />
               </li>
               <li className="py-2">
@@ -132,6 +135,9 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">
             <li>
               <NavbarBtn name={"Home"} link="/" />
+            </li>
+            <li>
+              <NavbarBtn name={"About Us"} link="/about" />
             </li>
             <li>
               <NavbarBtn name={"All Foods"} link="/all-foods" />

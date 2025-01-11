@@ -6,12 +6,12 @@ import ThemeContext from "../../contexts/ThemeContext";
 import { useContext } from "react";
 import { FooterNav, FooterSocial } from "./FooterComponents";
 import { FaF } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <footer className=" relative bg-base-200 text-base-content">
-      {/* Curved top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
         <svg
           className="relative block w-full h-12"
@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
 
       {/* Footer content */}
-      <div className="footer bg-base-200 text-base-content p-10 pt-20">
+      <div className="footer bg-base-200 text-base-content p-10 pt-20 container mx-auto">
         <aside>
           <img
             className="w-[80%]"
@@ -41,10 +41,18 @@ const Footer = () => {
         </aside>
         <nav className="mx-4">
           <h6 className="footer-title">Our Items</h6>
-          <a className="link link-hover text-base">Indians</a>
-          <a className="link link-hover text-base">Populars</a>
-          <a className="link link-hover text-base">Italians</a>
-          <a className="link link-hover text-base">Mexicans</a>
+          <Link to={"/all-foods"} className="link link-hover text-base">
+            Indians
+          </Link>
+          <Link to={"/all-foods"} className="link link-hover text-base">
+            Populars
+          </Link>
+          <Link to={"/all-foods"} className="link link-hover text-base">
+            Italians
+          </Link>
+          <Link to="/all-foods" className="link link-hover text-base">
+            Mexicans
+          </Link>
         </nav>
         <FooterNav
           first="company"
@@ -52,24 +60,19 @@ const Footer = () => {
           third="Contact"
           fourth="Jobs"
         />
-        <FooterNav
-          first="Legal"
-          second="Terms of use"
-          third="Privacy policy"
-          fourth="Cookie policy"
-        />
+
       </div>
 
       {/* Social links */}
       <div className="flex justify-center space-x-3  mobile:space-x-6  py-4 bg-base-200">
         <FooterSocial to={"https://www.facebook.com"}>
-          <FaFacebook size={32}  />
+          <FaFacebook size={32} />
         </FooterSocial>
         <FooterSocial to={"https://www.twitter.com"}>
-          <FaTwitter size={32}  />
+          <FaTwitter size={32} />
         </FooterSocial>
         <FooterSocial to={"https://www.instagram.com"}>
-          <FaInstagram size={32}  />
+          <FaInstagram size={32} />
         </FooterSocial>
         <FooterSocial to={"https://www.linkedin.com"}>
           <FaLinkedin size={32} />

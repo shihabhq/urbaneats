@@ -4,6 +4,7 @@ import Showcase from "./Showcase/Showcase";
 import TopFoods from "./components/TopFoods";
 import LatestNews from "./components/LatestNews";
 import Chefs from "./components/Chefs";
+import Booking from "./components/Booking";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Showcase />
       <TopFoods />
       <Chefs />
+      <Booking />
       <LatestNews />
     </>
   );

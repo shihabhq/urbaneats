@@ -12,7 +12,7 @@ import MyOrders from "../pages/PrivatePages/MyOrders/MyOrders";
 import AddFoods from "../pages/PrivatePages/AddFood/AddFoods";
 import Login from "../pages/AuthPages/Login";
 import Register from "../pages/AuthPages/Register";
-import axios from "axios";
+import About from "../pages/PublicPages/about/About";
 
 const router = createBrowserRouter([
   {
@@ -33,9 +33,12 @@ const router = createBrowserRouter([
         element: <SingleFoodPage />,
       },
       {
+        path: "/about",
+        element: <About />,
+      },
+      {
         path: "/all-foods",
         element: <AllFoods />,
-        loader: () => fetch("https://urbaneats-server.vercel.app/foods"),
       },
       {
         path: "/my-foods",

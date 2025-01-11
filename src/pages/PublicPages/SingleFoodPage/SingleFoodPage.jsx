@@ -42,7 +42,7 @@ const SingleFoodPage = () => {
 
             <div className="flex items-center justify-between mb-4">
               <span className="text-2xl font-bold text-btncol">
-                ${foodItem.price.toFixed(2)}
+                ${foodItem?.price}
               </span>
               <span className="text-base-content px-4 rounded-full border border-btncol">
                 Quantity: {foodItem.quantity}

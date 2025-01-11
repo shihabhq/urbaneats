@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ButtonBordered = ({ title, to }) => {
+const ButtonBordered = ({ title, to, onclick }) => {
   return (
     <Link
+      onClick={onclick && onclick}
       to={to || "#"}
       className="w-full flex justify-center py-2 px-4 border rounded-md shadow-sm text-sm font-medium bg-inherit text-btncol border-btncol transition-all  focus:outline-none focus:ring-2 focus:ring-offset-2 hover:bg-btncol hover:text-white focus:ring-btncol">
       {title}

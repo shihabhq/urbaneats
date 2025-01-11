@@ -15,7 +15,7 @@ import ButtonCovered from "../../../../shared/ButtonCovered";
 
 const SlidersContainer = () => {
   return (
-    <div className="home-banner relative  min-h-screen flex flex-col lg:flex-row justify-center items-center pt-16 gap-6 bg-cover bg-center">
+    <div className="home-banner relative  min-h-[80vh] flex flex-col lg:flex-row justify-center items-center pt-16 gap-6 bg-cover bg-center">
       <div
         className="absolute inset-0 bg-cover bg-center -z-10"
         style={{
