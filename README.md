@@ -41,7 +41,7 @@ UrbanEats is a multilevel Restaurant store management web application where user
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/urbaneats.git
+   git clone https://github.com/shihabhq/urbaneats.git
    cd urbaneats
    ```
 2. Install Dependencies:
