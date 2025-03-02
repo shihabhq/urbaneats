@@ -11,7 +11,6 @@ UrbanEats is a multilevel Restaurant store management web application where user
 - 🔄 **Manage Listings:** Users can add, update, and delete their food products
 - 📸 **Gallery Feature:** An interactive gallery for managing added foods
 - 🔒 **Data Protection:** Secure database handling with MongoDB
-- 🔒 **Data Protection:** Secure database handling with MongoDB
 
 ### Technologies used
 
