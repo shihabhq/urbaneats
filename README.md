@@ -15,7 +15,7 @@ UrbanEats is a multilevel Restaurant store management web application where user
 ### Technologies used
 
 - **Frontend:** React, React Router, React Icons, Swiper
-- **Backend & Database:** Firebase, MongoDB
+- **Backend & Database:** Firebase,NodeJS,ExpressJS & MongoDB
 - **Authentication & Security:** Firebase Authentication, JWT
 - **Others:** Axios, Moment.js, React-Toastify, Yet-Another-React-Lightbox
 
